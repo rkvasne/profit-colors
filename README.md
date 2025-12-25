@@ -1,79 +1,85 @@
-# 🎨 Conversor de Cores RGB para ProfitChart
+# 🎨 ProfitChart Color Converter
 
-Ferramenta web simples e eficiente para converter cores RGB e Hexadecimais para o formato de código numérico utilizado pela plataforma de trading **ProfitChart** (Nelogica).
+![License](https://img.shields.io/github/license/rkvasne/profit-colors)
+![GitHub stars](https://img.shields.io/github/stars/rkvasne/profit-colors?style=social)
+![Languages](https://img.shields.io/github/languages/top/rkvasne/profit-colors)
 
-## 🚀 Funcionalidades
+Uma ferramenta web profissional, open-source e gratuita para converter cores (RGB e Hex) para o formato numérico utilizado pela plataforma de trading **ProfitChart** (Nelogica).
 
-- **Conversão Bidirecional:**
-  - **RGB para ProfitChart:** Converta valores RGB (ex: `255, 0, 0`) para o código Profit (ex: `255`).
-  - **Hex para ProfitChart:** Cole códigos Hex (ex: `#FF0000`) e obtenha o código Profit automaticamente.
-  - **Visualização em Tempo Real:** Veja a cor resultante instantaneamente.
+🔗 **[Acesse a versão online](https://rkvasne.github.io/profit-colors/)**
 
-- **Seletor de Cores (Color Picker):**
-  - Seletor visual de matiz, saturação e brilho para encontrar a cor perfeita sem saber os códigos.
+---
 
-- **Histórico de Cores:**
-  - Salva automaticamente as últimas 9 cores utilizadas.
-  - O histórico persiste mesmo após fechar o navegador (usa `localStorage`).
+## 📸 Preview
 
-- **Tabela de Referência Rápida:**
-  - Lista de cores gerada automaticamente a cada 5 graus de matiz para consulta rápida.
-  - Copie o código RGB ou ProfitChart com um clique.
+<div align="center">
+  <img src="https://via.placeholder.com/800x400?text=Preview+da+Interface+Aqui" alt="Preview da Interface" width="100%">
+  <p><em>Interface moderna, responsiva e com suporte a tema escuro.</em></p>
+</div>
 
-- **Interface Moderna:**
-  - 🌓 **Tema Escuro/Claro:** Alterne entre modos para maior conforto visual.
-  - 📱 **Responsivo:** Funciona perfeitamente em computadores, tablets e celulares.
-  - ⌨️ **Atalhos de Teclado:**
-    - `Ctrl + C`: Copiar cor atual.
-    - `Alt + D`: Alternar tema.
-    - `Alt + H`: Limpar histórico.
+## ✨ Funcionalidades
 
-## 🛠️ Como Usar
+### 🔄 Conversão Inteligente
+- **RGB ↔ ProfitChart:** Digite valores R, G, B e obtenha o código instantaneamente.
+- **Hex ↔ ProfitChart:** Cole códigos Hex (ex: `#7159c1`) e converta automaticamente.
+- **Bidirecional:** Altere qualquer campo e todos os outros se atualizam.
 
-1. **Abra o arquivo `index.html`** em qualquer navegador moderno (Chrome, Edge, Firefox).
-2. **Para converter:**
-   - Digite os valores **R, G, B** nos campos numéricos.
-   - OU cole um código **Hexadecimal** no campo `#`.
-   - OU use o **Seletor de Cores** para escolher visualmente.
-3. **Obtenha o resultado:**
-   - O **Código ProfitChart** aparecerá logo abaixo da prévia da cor.
-   - Clique no botão de cópia ou use `Ctrl + C` para copiar.
-4. **No ProfitChart:**
-   - Cole o código numérico no campo de cor personalizada da plataforma.
+### 🎨 Ferramentas Visuais
+- **Color Picker:** Seletor visual de matiz e saturação.
+- **Histórico:** Salva automaticamente as últimas 9 cores utilizadas.
+- **Tabela de Referência:** Lista de cores gerada a cada 5º de matiz para consulta rápida.
 
-## 💻 Tecnologias
+### ⚡ Produtividade
+- **Cópia Rápida:** Clique em qualquer código para copiar.
+- **Atalhos de Teclado:**
+  - `Ctrl + C`: Copiar cor atual.
+  - `Alt + D`: Alternar Tema Escuro/Claro.
+  - `Alt + H`: Limpar histórico.
+- **URL Compartilhável:** A cor selecionada fica salva na URL, facilitando o envio para amigos.
 
-Este projeto foi construído com tecnologias web padrão, sem necessidade de compilação ou instalação de dependências complexas.
+## 🚀 Como Usar
 
-- **HTML5:** Estrutura semântica.
-- **CSS3:** Estilização moderna com Variáveis CSS (Custom Properties) e Flexbox/Grid.
-- **JavaScript (ES6+):** Lógica de conversão e interatividade.
-- **Bibliotecas (via CDN):**
-  - [FontAwesome](https://fontawesome.com/): Ícones da interface.
-  - [IMask](https://imask.js.org/): Máscara para entrada de dados no campo RGB.
+### Versão Online (Recomendado)
+Acesse **[rkvasne.github.io/profit-colors](https://rkvasne.github.io/profit-colors/)** e comece a usar agora mesmo.
 
-## 🧮 Fórmula de Conversão
+### Versão Local (Offline)
+Como o projeto é um **Single File Application** (Arquivo Único), você pode rodá-lo sem instalar nada:
 
-A plataforma ProfitChart utiliza um formato de cor inteiro (integer) baseado na seguinte fórmula:
+1. Baixe o arquivo `index.html` [clicando aqui](https://raw.githubusercontent.com/rkvasne/profit-colors/main/index.html).
+2. Abra o arquivo em qualquer navegador (Chrome, Edge, Firefox).
+3. Pronto!
+
+## 🧮 A Matemática por trás
+
+O ProfitChart utiliza um formato de cor **Inteiro (Integer)** calculado da seguinte forma:
 
 ```javascript
-Código = Red + (Green * 256) + (Blue * 65536)
+// Fórmula de conversão
+ProfitCode = Red + (Green * 256) + (Blue * 65536)
 ```
 
-Onde R, G e B são valores inteiros entre 0 e 255.
+Onde **R, G e B** são valores inteiros entre `0` e `255`.
 
-## 📝 Estrutura do Projeto
+## 🤝 Como Contribuir
 
-O projeto é "Single File" (Arquivo Único) para facilitar o compartilhamento e uso. Todo o código (HTML, CSS, JS) reside em:
+Contribuições são muito bem-vindas! Se você tem uma ideia de melhoria:
 
-- `index.html`
+1. Faça um **Fork** do projeto.
+2. Crie uma Branch para sua feature (`git checkout -b feature/MinhaFeature`).
+3. Faça o Commit (`git commit -m 'Adiciona MinhaFeature'`).
+4. Faça o Push (`git push origin feature/MinhaFeature`).
+5. Abra um **Pull Request**.
 
 ## 👤 Autor
 
-Desenvolvido por **Raphael Kvasne**
+Desenvolvido com 💙 por **Raphael Kvasne**
 
 - 📧 Email: rkvasne@gmail.com
 - 📸 Instagram: [@rkvasne](https://www.instagram.com/rkvasne/)
+- 💼 LinkedIn: [Raphael Kvasne](https://www.linkedin.com/in/raphael-kvasne/)
 
 ---
-© 2025 Todos os direitos reservados.
+
+<p align="center">
+  <small>Este projeto não possui afiliação oficial com a Nelogica ou a plataforma ProfitChart.</small>
+</p>
