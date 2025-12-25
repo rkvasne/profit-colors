@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
     <script src="https://unpkg.com/imask"></script>
     <meta name="description" content="Converta cores RGB e Hex para o formato numérico do ProfitChart (Nelogica). Ferramenta gratuita, online e offline para traders.">
     <meta name="keywords" content="ProfitChart, Nelogica, RGB, Hex, Cores, Conversor, Trading, Setup, Layout, Profit">
@@ -906,7 +907,7 @@
                 </a>
             </div>
             <div class="copyright">
-                © <span id="currentYear"></span> Todos os direitos reservados
+                © <span id="currentYear"></span> ProfitColors v0.1.0 • Todos os direitos reservados
             </div>
         </div>
     </footer>
