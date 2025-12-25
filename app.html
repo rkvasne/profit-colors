@@ -6,7 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conversor RGB para ProfitChart</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎨</text></svg>">
+    <!-- Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/imask"></script>
     <meta name="description" content="Converta cores RGB e Hex para o formato numérico do ProfitChart (Nelogica). Ferramenta gratuita, online e offline para traders.">
     <meta name="keywords" content="ProfitChart, Nelogica, RGB, Hex, Cores, Conversor, Trading, Setup, Layout, Profit">
@@ -14,61 +18,269 @@
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://rkvasne.github.io/profit-colors/">
+    <meta property="og:url" content="https://rkvasne.github.io/profit-colors/app.html">
     <meta property="og:title" content="🎨 Conversor de Cores para ProfitChart">
     <meta property="og:description" content="Ferramenta essencial para personalizar seu ProfitChart. Converta RGB e Hex para o código nativo da plataforma.">
     <meta property="og:image" content="https://rkvasne.github.io/profit-colors/preview-image.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://rkvasne.github.io/profit-colors/">
+    <meta property="twitter:url" content="https://rkvasne.github.io/profit-colors/app.html">
     <meta property="twitter:title" content="🎨 Conversor de Cores para ProfitChart">
     <meta property="twitter:description" content="Ferramenta essencial para personalizar seu ProfitChart. Converta RGB e Hex para o código nativo da plataforma.">
     <meta property="twitter:image" content="https://rkvasne.github.io/profit-colors/preview-image.png">
-    <meta name="theme-color" content="#4a90e2">
+    <meta name="theme-color" content="#0f172a">
     <style>
         :root {
-            --bg-gradient: linear-gradient(135deg, #e0e7ff, #f9faff);
-            --container-bg: #fff;
-            --text-color: #1a2a6c;
-            --text-secondary: #555;
-            --border-color: #e0e0e0;
-            --shadow-color: rgba(0, 0, 0, 0.1);
-            --table-header-bg: linear-gradient(90deg, #4a90e2, #357abd);
-            --table-border: #e0e0e0;
-            --table-highlight: rgba(224, 224, 224, 0.5);
-            --input-bg: #f9f9f9;
-            --footer-bg: #f8f9fa;
-        }
-
-        [data-theme="dark"] {
-            --bg-gradient: linear-gradient(135deg, #1a1a2e, #16213e);
-            --container-bg: #242424;
-            --text-color: #e0e0e0;
-            --text-secondary: #b0b0b0;
-            --border-color: #404040;
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent: #3b82f6;
+            --accent-hover: #2563eb;
+            --success: #10b981;
+            --border: #334155;
+            --gradient-start: #3b82f6;
+            --gradient-end: #8b5cf6;
+            
+            /* Mantendo variáveis antigas mapeadas para as novas para compatibilidade */
+            --container-bg: var(--bg-card);
+            --text-color: var(--text-primary);
+            --border-color: var(--border);
             --shadow-color: rgba(0, 0, 0, 0.3);
-            --table-header-bg: linear-gradient(90deg, #2d5a8c, #1c3a5f);
-            --table-border: #404040;
-            --table-highlight: rgba(64, 64, 64, 0.5);
-            --input-bg: #333;
-            --footer-bg: #1a1a1a;
+            --table-header-bg: var(--bg-dark);
+            --table-border: var(--border);
+            --table-highlight: rgba(59, 130, 246, 0.1);
+            --input-bg: var(--bg-dark);
+            --footer-bg: var(--bg-dark);
         }
 
+        /* Removendo tema claro antigo e forçando tema dark moderno */
         html, body {
             margin: 0;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
         }
 
         body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: var(--bg-gradient);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 20px;
+            padding: 80px 20px 20px; /* Padding top aumentado para navbar */
             gap: 20px;
         }
+
+        /* Navbar */
+        nav {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .container {
+            position: relative;
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border: 1px solid var(--border);
+            width: 100%;
+            max-width: 900px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            color: var(--text-primary);
+            margin-bottom: 30px;
+            font-weight: 700;
+            background: linear-gradient(to right, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Input Styles */
+        .input-group input,
+        #rgbSingle,
+        #hexInput {
+            background: var(--bg-dark);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            border-radius: 8px;
+            padding: 12px;
+            font-family: 'Inter', monospace;
+            font-size: 1rem;
+        }
+
+        .input-group input:focus,
+        #rgbSingle:focus,
+        #hexInput:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+            outline: none;
+        }
+
+        label {
+            color: var(--text-secondary) !important;
+            font-weight: 500;
+            font-size: 0.875rem !important;
+            margin-bottom: 8px !important;
+        }
+
+        /* Color Picker */
+        .color-picker-container canvas {
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        /* Result Area */
+        #result {
+            background: var(--bg-dark);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            margin-top: 20px;
+            font-family: 'Inter', monospace;
+            font-size: 1.2rem;
+            color: var(--accent);
+        }
+
+        #result strong {
+            color: var(--text-primary);
+        }
+
+        /* History */
+        .color-history-container {
+            background: var(--bg-dark);
+            border: 1px solid var(--border);
+        }
+
+        .history-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+        }
+
+        .history-item:hover {
+            border-color: var(--accent);
+            transform: translateY(-1px);
+        }
+
+        /* Table */
+        .color-table {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+        }
+
+        .color-table th {
+            background: var(--bg-dark);
+            color: var(--text-secondary);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+            padding: 1rem;
+        }
+
+        .color-table td {
+            border-color: var(--border);
+            padding: 1rem;
+        }
+
+        .color-table tr:hover {
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+
+        /* Buttons */
+        .copy-icon {
+            color: var(--text-secondary);
+            transition: all 0.2s;
+        }
+
+        .copy-icon:hover {
+            color: var(--accent);
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-card);
+            border-top: 1px solid var(--border);
+            margin-top: auto;
+            width: 100%;
+            padding: 2rem;
+        }
+
+        .footer-info a {
+            color: var(--text-secondary);
+        }
+
+        .footer-info a:hover {
+            color: var(--accent);
+            background: rgba(59, 130, 246, 0.1);
+        }
+
+        /* Hide old theme button */
+        .theme-button {
+            display: none;
+        }
+
+        .share-button {
+            color: var(--text-secondary);
+        }
+        
+        .share-button:hover {
+            color: var(--accent);
+        }
+    </style>
 
         @media (max-width: 768px) {
             .color-picker-container {
@@ -595,13 +807,23 @@
 </head>
 
 <body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-palette"></i>
+                Profit<span>Colors</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html#features">Recursos</a>
+                <a href="index.html#about">Desenvolvedor</a>
+                <a href="https://github.com/rkvasne/profit-colors" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </nav>
+
     <div class="container">
         <button class="share-button" onclick="shareUrl()" title="Compartilhar">
             <i class="fas fa-share-alt"></i>
-        </button>
-
-        <button class="theme-button" onclick="toggleTheme()" title="Alternar tema">
-            <i class="fas fa-moon"></i>
         </button>
 
         <h1>Conversor RGB para ProfitChart</h1>

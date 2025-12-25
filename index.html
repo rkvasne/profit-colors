@@ -3,269 +3,403 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conversor ProfitChart - Ferramenta de Cores para Traders</title>
-    <meta name="description" content="Personalize seus gráficos no ProfitChart como um profissional. Converta RGB e Hex para o código nativo da Nelogica em segundos.">
+    <title>ProfitColors - Conversor de Cores Profissional para Traders</title>
+    <meta name="description" content="Ferramenta profissional para traders personalizarem o ProfitChart. Converta RGB e Hex para o código nativo da Nelogica com precisão e rapidez.">
+    <meta name="keywords" content="ProfitChart, Nelogica, Trading, Cores, Setup, Layout, Day Trade, RGB, Hex">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎨</text></svg>">
+    
+    <!-- Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
     <style>
         :root {
-            --primary: #4a90e2;
-            --primary-dark: #357abd;
-            --text: #1a2a6c;
-            --text-light: #555;
-            --bg-light: #f9faff;
-            --white: #ffffff;
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent: #3b82f6;
+            --accent-hover: #2563eb;
+            --success: #10b981;
+            --border: #334155;
+            --gradient-start: #3b82f6;
+            --gradient-end: #8b5cf6;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            font-family: 'Inter', sans-serif;
         }
 
         body {
-            background: linear-gradient(135deg, #e0e7ff 0%, #f9faff 100%);
-            color: var(--text);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
         }
 
+        /* Navbar */
         nav {
-            padding: 20px 40px;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            width: 100%;
         }
 
         .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--text);
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 10px;
-            text-decoration: none;
+            gap: 0.5rem;
         }
 
-        .logo i {
-            color: var(--primary);
-        }
-
-        .nav-links a {
-            color: var(--text);
-            text-decoration: none;
-            margin-left: 20px;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        .hero {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 60px 20px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        h1 {
-            font-size: 48px;
-            line-height: 1.2;
-            margin-bottom: 20px;
-            background: linear-gradient(90deg, #1a2a6c, #4a90e2);
+        .logo span {
+            background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .hero p {
-            font-size: 20px;
-            color: var(--text-light);
-            margin-bottom: 40px;
-            max-width: 600px;
-            line-height: 1.6;
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
         }
 
-        .cta-buttons {
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-btn {
+            background: var(--accent);
+            color: white !important;
+            padding: 0.5rem 1.2rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s;
+        }
+
+        .nav-btn:hover {
+            background: var(--accent-hover);
+            transform: translateY(-1px);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 180px 20px 100px;
+            text-align: center;
+            position: relative;
+            background: radial-gradient(circle at top center, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.02em;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+        }
+
+        .cta-group {
             display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
+            gap: 1rem;
             justify-content: center;
         }
 
         .btn {
-            padding: 15px 35px;
-            border-radius: 50px;
-            font-size: 18px;
+            padding: 1rem 2.5rem;
+            border-radius: 0.75rem;
             font-weight: 600;
             text-decoration: none;
-            transition: transform 0.2s, box-shadow 0.2s;
+            font-size: 1.1rem;
+            transition: all 0.3s;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: 0.5rem;
         }
 
         .btn-primary {
-            background: var(--primary);
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
             color: white;
-            box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+            box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
         }
 
         .btn-primary:hover {
-            background: var(--primary-dark);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(74, 144, 226, 0.4);
+            box-shadow: 0 8px 30px rgba(59, 130, 246, 0.5);
         }
 
         .btn-secondary {
-            background: white;
-            color: var(--text);
-            border: 2px solid #e0e0e0;
+            background: var(--bg-card);
+            color: var(--text-primary);
+            border: 1px solid var(--border);
         }
 
         .btn-secondary:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-            transform: translateY(-2px);
+            background: var(--border);
         }
 
+        /* Features Grid */
         .features {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            max-width: 1000px;
-            margin: 60px auto;
-            padding: 0 20px;
-            width: 100%;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
         }
 
         .feature-card {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            text-align: center;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 2rem;
+            border-radius: 1rem;
             transition: transform 0.3s;
         }
 
         .feature-card:hover {
             transform: translateY(-5px);
+            border-color: var(--accent);
         }
 
         .feature-icon {
-            font-size: 30px;
-            color: var(--primary);
-            margin-bottom: 20px;
-            background: rgba(74, 144, 226, 0.1);
-            width: 60px;
-            height: 60px;
-            display: inline-flex;
+            width: 50px;
+            height: 50px;
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--accent);
+            border-radius: 12px;
+            display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 50%;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
         }
 
         .feature-card h3 {
-            margin-bottom: 10px;
-            color: var(--text);
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
         }
 
         .feature-card p {
-            color: var(--text-light);
-            font-size: 14px;
-            line-height: 1.5;
+            color: var(--text-secondary);
+            font-size: 1rem;
         }
 
-        footer {
+        /* About Dev Section */
+        .developer-section {
+            background: var(--bg-card);
+            padding: 100px 20px;
+            border-top: 1px solid var(--border);
+        }
+
+        .dev-container {
+            max-width: 800px;
+            margin: 0 auto;
             text-align: center;
-            padding: 40px 20px;
-            color: var(--text-light);
-            border-top: 1px solid rgba(0,0,0,0.05);
-            margin-top: auto;
+        }
+
+        .dev-avatar {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .dev-container h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .dev-container h3 {
+            color: var(--accent);
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .dev-bio {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .dev-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .dev-link {
+            color: var(--text-primary);
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50px;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .dev-link:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 3rem 2rem;
+            text-align: center;
+            color: var(--text-secondary);
         }
 
         footer a {
-            color: var(--primary);
+            color: var(--accent);
             text-decoration: none;
         }
 
+        /* Responsive */
         @media (max-width: 768px) {
-            h1 {
-                font-size: 36px;
-            }
-            
-            nav {
-                flex-direction: column;
-                gap: 15px;
+            .hero h1 {
+                font-size: 2.5rem;
             }
             
             .nav-links {
-                margin-top: 10px;
+                display: none; /* Simplificado para mobile */
             }
-            
-            .nav-links a {
-                margin: 0 10px;
+
+            .cta-group {
+                flex-direction: column;
             }
         }
     </style>
 </head>
 <body>
     <nav>
-        <a href="#" class="logo">
-            <i class="fas fa-palette"></i> ProfitColors
-        </a>
-        <div class="nav-links">
-            <a href="https://github.com/rkvasne/profit-colors" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-            <a href="mailto:rkvasne@gmail.com">Contato</a>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fas fa-palette"></i>
+                Profit<span>Colors</span>
+            </a>
+            <div class="nav-links">
+                <a href="#features">Recursos</a>
+                <a href="#about">Desenvolvedor</a>
+                <a href="https://github.com/rkvasne/profit-colors" target="_blank">GitHub</a>
+                <a href="app.html" class="nav-btn">Abrir App</a>
+            </div>
         </div>
     </nav>
 
     <main class="hero">
-        <h1>Personalize seus gráficos<br>como um profissional</h1>
-        <p>A ferramenta definitiva para traders que buscam precisão visual. Converta RGB e Hex para o código nativo da Nelogica em segundos.</p>
+        <h1>Customize seu Profit<br>como um Profissional</h1>
+        <p>A ferramenta definitiva para traders que buscam precisão no setup visual. Converta cores RGB e Hex para o código nativo da Nelogica instantaneamente.</p>
         
-        <div class="cta-buttons">
+        <div class="cta-group">
             <a href="app.html" class="btn btn-primary">
-                <i class="fas fa-rocket"></i> Abrir Ferramenta
+                <i class="fas fa-rocket"></i> Acessar Ferramenta
             </a>
             <a href="https://github.com/rkvasne/profit-colors" target="_blank" class="btn btn-secondary">
-                <i class="fas fa-code"></i> Ver Código
+                <i class="fab fa-github"></i> Ver Código Fonte
             </a>
-        </div>
-
-        <div class="features">
-            <div class="feature-card">
-                <div class="feature-icon"><i class="fas fa-exchange-alt"></i></div>
-                <h3>Conversão Total</h3>
-                <p>Converta de RGB e Hex para ProfitChart e vice-versa automaticamente.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon"><i class="fas fa-eye-dropper"></i></div>
-                <h3>Color Picker</h3>
-                <p>Selecione a cor perfeita visualmente com nosso seletor avançado.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon"><i class="fas fa-history"></i></div>
-                <h3>Histórico</h3>
-                <p>Suas últimas cores ficam salvas para você não perder nenhum setup.</p>
-            </div>
         </div>
     </main>
 
+    <section id="features" class="features">
+        <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-sync-alt"></i></div>
+            <h3>Conversão Bidirecional</h3>
+            <p>Digite RGB, Hex ou use o seletor visual. O código ProfitChart é gerado automaticamente em tempo real.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-history"></i></div>
+            <h3>Histórico Inteligente</h3>
+            <p>Nunca perca uma cor. Suas últimas 9 cores ficam salvas localmente no navegador para acesso rápido.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
+            <h3>100% Responsivo</h3>
+            <p>Funciona perfeitamente no seu desktop, tablet ou celular. Leve seu setup visual para qualquer lugar.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-code"></i></div>
+            <h3>Open Source</h3>
+            <p>Código transparente e auditável. Hospedado no GitHub, gratuito para sempre e sem telemetria.</p>
+        </div>
+    </section>
+
+    <section id="about" class="developer-section">
+        <div class="dev-container">
+            <div class="dev-avatar">RK</div>
+            <h2>Raphael Kvasne</h2>
+            <h3>Full Stack Developer & Trader</h3>
+            <p class="dev-bio">
+                Especialista em criar ferramentas que unem produtividade e design. Criador do <strong>ProfitColors</strong>, <strong>Dahora App</strong> e <strong>Taskvasne</strong>. Minha missão é simplificar fluxos de trabalho complexos com software elegante e eficiente.
+            </p>
+            <div class="dev-links">
+                <a href="https://kvasne.com" target="_blank" class="dev-link">
+                    <i class="fas fa-globe"></i> kvasne.com
+                </a>
+                <a href="https://github.com/rkvasne" target="_blank" class="dev-link">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="mailto:rkvasne@gmail.com" class="dev-link">
+                    <i class="fas fa-envelope"></i> Contato
+                </a>
+            </div>
+        </div>
+    </section>
+
     <footer>
-        <p>&copy; 2025 ProfitColors. Desenvolvido por <a href="https://github.com/rkvasne" target="_blank">Raphael Kvasne</a>.</p>
-        <p style="font-size: 12px; margin-top: 10px; opacity: 0.7;">Não afiliado à Nelogica.</p>
+        <p>&copy; 2025 ProfitColors. Desenvolvido com 💙 por <a href="https://kvasne.com" target="_blank">Raphael Kvasne</a>.</p>
+        <p style="font-size: 0.8rem; margin-top: 1rem; opacity: 0.5;">Este projeto não possui afiliação oficial com a Nelogica.</p>
     </footer>
 </body>
 </html>
