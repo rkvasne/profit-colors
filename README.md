@@ -6,14 +6,14 @@
 
 Uma ferramenta web profissional, open-source e gratuita para converter cores (RGB e Hex) para o formato numérico utilizado pela plataforma de trading **ProfitChart** (Nelogica).
 
-🔗 **[Acesse a versão online](https://rkvasne.github.io/profit-colors/)**
+🔗 **[Acesse a versão online](https://rkvasne.github.io/profit-colors/app.html)**
 
 ---
 
 ## 📸 Preview
 
 <div align="center">
-  <img src="https://via.placeholder.com/800x400?text=Preview+da+Interface+Aqui" alt="Preview da Interface" width="100%">
+  <img src="./preview-image.png" alt="Preview da Interface" width="100%">
   <p><em>Interface moderna, responsiva e com suporte a tema escuro.</em></p>
 </div>
 
@@ -43,7 +43,11 @@ Uma ferramenta web profissional, open-source e gratuita para converter cores (RG
 ## 🚀 Como Usar
 
 ### Versão Online (Recomendado)
-Acesse **[rkvasne.github.io/profit-colors](https://rkvasne.github.io/profit-colors/)** e comece a usar agora mesmo.
+Acesse **[rkvasne.github.io/profit-colors/app.html](https://rkvasne.github.io/profit-colors/app.html)** e comece a usar agora mesmo.
+
+Outros links úteis:
+- Repositório: **https://github.com/rkvasne/profit-colors**
+- Landing page: **https://rkvasne.github.io/profit-colors/**
 
 ### Versão Local (Offline)
 Como o projeto é um site estático (HTML/CSS/JS), você pode rodá-lo sem instalar nada:
