@@ -8,6 +8,8 @@ Uma ferramenta web profissional, open-source e gratuita para converter cores (RG
 
 🔗 **[Acesse a versão online](https://rkvasne.github.io/profit-colors/app.html)**
 
+Versão atual: **v0.1.2**
+
 ---
 
 ## 📸 Preview
@@ -69,13 +71,12 @@ Onde **R, G e B** são valores inteiros entre `0` e `255`.
 
 ## 🤝 Como Contribuir
 
-Contribuições são muito bem-vindas! Se você tem uma ideia de melhoria:
+Contribuições são muito bem-vindas!
 
-1. Faça um **Fork** do projeto.
-2. Crie uma Branch para sua feature (`git checkout -b feature/MinhaFeature`).
-3. Faça o Commit (`git commit -m 'Adiciona MinhaFeature'`).
-4. Faça o Push (`git push origin feature/MinhaFeature`).
-5. Abra um **Pull Request**.
+- Guia: `CONTRIBUTING.md`
+- Código de conduta: `CODE_OF_CONDUCT.md`
+- Política de segurança: `SECURITY.md`
+- Issues: https://github.com/rkvasne/profit-colors/issues
 
 ## 👤 Autor
 
@@ -84,6 +85,13 @@ Desenvolvido com 💙 por **Raphael Kvasne**
 - 📧 Email: rkvasne@gmail.com
 - 📸 Instagram: [@rkvasne](https://www.instagram.com/rkvasne/)
 - 💼 LinkedIn: [Raphael Kvasne](https://www.linkedin.com/in/raphael-kvasne/)
+
+## 📝 Changelog
+
+### v0.1.2 (2025-12-26)
+- Padroniza os blocos de cores (Profit e Hue) em 12 colunas e múltiplos de 12.
+- Atualiza links e corrige a imagem da seção Preview.
+- Ajusta instruções e referências para refletir o estado atual do projeto.
 
 ---
 

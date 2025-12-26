@@ -1,13 +1,17 @@
 # Política de Segurança
 
+Links úteis:
+- App online: https://rkvasne.github.io/profit-colors/app.html
+- Repositório: https://github.com/rkvasne/profit-colors
+
 ## Versões Suportadas
 
 Como este é um projeto web (frontend puro), a "versão" é contínua. No entanto, recomendamos sempre utilizar a versão mais recente disponível na branch `main` ou através da página oficial.
 
-| Versão | Suportada          |
-| ------- | ------------------ |
-| Online  | :white_check_mark: |
-| Offline (v1.0+) | :white_check_mark: |
+| Canal | Suportado |
+| --- | --- |
+| GitHub Pages (online) | :white_check_mark: |
+| Arquivos do repositório (offline) | :white_check_mark: |
 
 ## Reportando uma Vulnerabilidade
 

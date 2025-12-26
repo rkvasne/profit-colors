@@ -2,6 +2,11 @@
 
 Obrigado pelo seu interesse em contribuir para o **ProfitColors**! 🎉
 
+Links úteis:
+- App online: https://rkvasne.github.io/profit-colors/app.html
+- Repositório: https://github.com/rkvasne/profit-colors
+- Issues: https://github.com/rkvasne/profit-colors/issues
+
 Este documento contém diretrizes para garantir que sua contribuição seja suave e eficaz.
 
 ## 🤝 Como Contribuir
@@ -38,7 +43,7 @@ Tem uma ideia para deixar o projeto ainda melhor? Abra uma Issue com a tag `enha
 Como o projeto é frontend puro sem build system complexo:
 1. Abra `index.html` e `app.html` em diferentes navegadores (Chrome, Firefox, Edge).
 2. Verifique a responsividade em modo mobile (F12).
-3. Teste o tema escuro/claro.
+3. Verifique contraste e legibilidade no tema escuro.
 4. Verifique se a conversão de cores está matematicamente correta.
 
 ## 📜 Licença
