@@ -26,16 +26,19 @@ Uma ferramenta web profissional, open-source e gratuita para converter cores (RG
 
 ### 🎨 Ferramentas Visuais
 - **Color Picker:** Seletor visual de matiz e saturação.
-- **Histórico:** Salva automaticamente as últimas 9 cores utilizadas.
-- **Tabela de Referência:** Lista de cores gerada a cada 5º de matiz para consulta rápida.
+- **Histórico:** Salva automaticamente as últimas 12 cores copiadas (persistente no navegador).
+- **Tabelas de Referência:** Blocos de cores organizados por matiz (Hue) e escala de cinza.
 
 ### ⚡ Produtividade
-- **Cópia Rápida:** Clique em qualquer código para copiar.
+- **Cópia Rápida:** Clique no resultado ou no botão de copiar para copiar o código Profit.
 - **Atalhos de Teclado:**
-  - `Ctrl + C`: Copiar cor atual.
-  - `Alt + D`: Alternar Tema Escuro/Claro.
-  - `Alt + H`: Limpar histórico.
-- **URL Compartilhável:** A cor selecionada fica salva na URL, facilitando o envio para amigos.
+  - `Alt + C`: Copiar código Profit da cor atual.
+  - `Alt + H`: Focar o campo Hex.
+  - `Alt + R`: Focar o campo R.
+  - `Alt + G`: Focar o campo G.
+  - `Alt + B`: Focar o campo B.
+  - `Esc`: Resetar foco/fechar ajuda.
+- **Compartilhamento:** Botão de compartilhar copia o link da página (ou abre o compartilhamento nativo).
 
 ## 🚀 Como Usar
 
@@ -43,11 +46,11 @@ Uma ferramenta web profissional, open-source e gratuita para converter cores (RG
 Acesse **[rkvasne.github.io/profit-colors](https://rkvasne.github.io/profit-colors/)** e comece a usar agora mesmo.
 
 ### Versão Local (Offline)
-Como o projeto é um **Single File Application** (Arquivo Único), você pode rodá-lo sem instalar nada:
+Como o projeto é um site estático (HTML/CSS/JS), você pode rodá-lo sem instalar nada:
 
-1. Baixe o arquivo `index.html` [clicando aqui](https://raw.githubusercontent.com/rkvasne/profit-colors/main/index.html).
-2. Abra o arquivo em qualquer navegador (Chrome, Edge, Firefox).
-3. Pronto!
+1. Baixe o repositório.
+2. Abra `app.html` no navegador (Chrome, Edge, Firefox).
+3. Opcional: `index.html` é a landing page.
 
 ## 🧮 A Matemática por trás
 

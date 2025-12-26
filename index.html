@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,329 +9,25 @@
     <meta name="keywords" content="ProfitChart, Nelogica, Trading, Cores, Setup, Layout, Day Trade, RGB, Hex">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎨</text></svg>">
     
-    <!-- Fonts -->
+    <!-- Fonts & Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
 
-    <style>
-        :root {
-            --bg-dark: #0f172a;
-            --bg-card: #1e293b;
-            --text-primary: #f8fafc;
-            --text-secondary: #94a3b8;
-            --accent: #3b82f6;
-            --accent-hover: #2563eb;
-            --success: #10b981;
-            --border: #334155;
-            --gradient-start: #3b82f6;
-            --gradient-end: #8b5cf6;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-dark);
-            color: var(--text-primary);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Navbar */
-        nav {
-            background: rgba(15, 23, 42, 0.8);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--text-primary);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .logo span {
-            background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-            font-size: 0.95rem;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent);
-        }
-
-        .nav-btn {
-            background: var(--accent);
-            color: white !important;
-            padding: 0.5rem 1.2rem;
-            border-radius: 0.5rem;
-            transition: all 0.3s;
-        }
-
-        .nav-btn:hover {
-            background: var(--accent-hover);
-            transform: translateY(-1px);
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 180px 20px 100px;
-            text-align: center;
-            position: relative;
-            background: radial-gradient(circle at top center, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(to right, #fff, #94a3b8);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: -0.02em;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            color: var(--text-secondary);
-            max-width: 700px;
-            margin: 0 auto 3rem;
-        }
-
-        .cta-group {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-        }
-
-        .btn {
-            padding: 1rem 2.5rem;
-            border-radius: 0.75rem;
-            font-weight: 600;
-            text-decoration: none;
-            font-size: 1.1rem;
-            transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-            color: white;
-            box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(59, 130, 246, 0.5);
-        }
-
-        .btn-secondary {
-            background: var(--bg-card);
-            color: var(--text-primary);
-            border: 1px solid var(--border);
-        }
-
-        .btn-secondary:hover {
-            background: var(--border);
-        }
-
-        /* Features Grid */
-        .features {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 80px 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .feature-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            padding: 2rem;
-            border-radius: 1rem;
-            transition: transform 0.3s;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent);
-        }
-
-        .feature-icon {
-            width: 50px;
-            height: 50px;
-            background: rgba(59, 130, 246, 0.1);
-            color: var(--accent);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .feature-card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
-
-        .feature-card p {
-            color: var(--text-secondary);
-            font-size: 1rem;
-        }
-
-        /* About Dev Section */
-        .developer-section {
-            background: var(--bg-card);
-            padding: 100px 20px;
-            border-top: 1px solid var(--border);
-        }
-
-        .dev-container {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .dev-avatar {
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-            border-radius: 50%;
-            margin: 0 auto 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: white;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-        }
-
-        .dev-container h2 {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .dev-container h3 {
-            color: var(--accent);
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .dev-bio {
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            line-height: 1.8;
-        }
-
-        .dev-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .dev-link {
-            color: var(--text-primary);
-            text-decoration: none;
-            padding: 0.8rem 1.5rem;
-            background: rgba(255,255,255,0.05);
-            border-radius: 50px;
-            border: 1px solid var(--border);
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .dev-link:hover {
-            background: var(--accent);
-            border-color: var(--accent);
-            color: white;
-        }
-
-        /* Footer */
-        footer {
-            border-top: 1px solid var(--border);
-            padding: 3rem 2rem;
-            text-align: center;
-            color: var(--text-secondary);
-        }
-
-        footer a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .nav-links {
-                display: none; /* Simplificado para mobile */
-            }
-
-            .cta-group {
-                flex-direction: column;
-            }
-        }
-    </style>
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/landing.css">
 </head>
+
 <body>
+    <!-- Navbar -->
     <nav>
         <div class="nav-container">
             <a href="#" class="logo">
-                <i class="fas fa-palette"></i>
-                Profit<span>Colors</span>
+                <i class="fas fa-chart-line"></i>
+                <span>ProfitColors</span>
             </a>
             <div class="nav-links">
                 <a href="#features">Recursos</a>
@@ -341,43 +38,95 @@
         </div>
     </nav>
 
+    <!-- Hero Section -->
     <main class="hero">
-        <h1>Customize seu Profit<br>como um Profissional</h1>
-        <p>A ferramenta definitiva para traders que buscam precisão no setup visual. Converta cores RGB e Hex para o código nativo da Nelogica instantaneamente.</p>
-        
-        <div class="cta-group">
-            <a href="app.html" class="btn btn-primary">
-                <i class="fas fa-rocket"></i> Acessar Ferramenta
-            </a>
-            <a href="https://github.com/rkvasne/profit-colors" target="_blank" class="btn btn-secondary">
-                <i class="fab fa-github"></i> Ver Código Fonte
-            </a>
+        <!-- Canvas Background Animation -->
+        <canvas id="chart-bg"></canvas>
+
+        <div class="hero-content">
+            <div class="version-badge">✨ Nova versão v0.1.1</div>
+            <h1>Customize seu Profit<br>como um Profissional</h1>
+            <p>A ferramenta definitiva para traders que buscam precisão no setup visual. Converta cores RGB e Hex para o código nativo da Nelogica instantaneamente.</p>
+            
+            <div class="cta-group">
+                <a href="app.html" class="btn btn-primary">
+                    <i class="fas fa-rocket"></i> Acessar Ferramenta
+                </a>
+                <a href="https://github.com/rkvasne/profit-colors" target="_blank" class="btn btn-secondary">
+                    <i class="fab fa-github"></i> Ver Código Fonte
+                </a>
+            </div>
         </div>
     </main>
 
+    <!-- Features Section -->
     <section id="features" class="features">
-        <div class="feature-card">
-            <div class="feature-icon"><i class="fas fa-sync-alt"></i></div>
-            <h3>Conversão Bidirecional</h3>
-            <p>Digite RGB, Hex ou use o seletor visual. O código ProfitChart é gerado automaticamente em tempo real.</p>
+        <div class="section-header">
+            <h2 class="section-title">Recursos Poderosos</h2>
+            <p class="section-subtitle">Tudo o que você precisa para gerenciar as cores do seu setup</p>
         </div>
-        <div class="feature-card">
-            <div class="feature-icon"><i class="fas fa-history"></i></div>
-            <h3>Histórico Inteligente</h3>
-            <p>Nunca perca uma cor. Suas últimas 9 cores ficam salvas localmente no navegador para acesso rápido.</p>
-        </div>
-        <div class="feature-card">
-            <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
-            <h3>100% Responsivo</h3>
-            <p>Funciona perfeitamente no seu desktop, tablet ou celular. Leve seu setup visual para qualquer lugar.</p>
-        </div>
-        <div class="feature-card">
-            <div class="feature-icon"><i class="fas fa-code"></i></div>
-            <h3>Open Source</h3>
-            <p>Código transparente e auditável. Hospedado no GitHub, gratuito para sempre e sem telemetria.</p>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-sync-alt"></i></div>
+                <h3>Conversão Bidirecional</h3>
+                <p>Digite RGB, Hex ou use o seletor visual. O código ProfitChart é gerado automaticamente em tempo real.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-history"></i></div>
+                <h3>Histórico Inteligente</h3>
+                <p>Nunca perca uma cor. Suas últimas 9 cores ficam salvas localmente no navegador para acesso rápido.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
+                <h3>100% Responsivo</h3>
+                <p>Funciona perfeitamente no seu desktop, tablet ou celular. Leve seu setup visual para qualquer lugar.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-code"></i></div>
+                <h3>Open Source</h3>
+                <p>Código transparente e auditável. Hospedado no GitHub, gratuito para sempre e sem telemetria.</p>
+            </div>
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="section-header">
+            <h2 class="section-title">Perguntas Frequentes</h2>
+            <p class="section-subtitle">Dúvidas comuns sobre o uso da ferramenta</p>
+        </div>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    O ProfitColors é gratuito?
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    Sim! O projeto é 100% gratuito e de código aberto (Open Source). Você pode usar à vontade e até contribuir no GitHub.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    Funciona no ProfitChart Pro/Plus/One?
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    Sim! O código de cores gerado (número inteiro) é o padrão nativo da plataforma Nelogica e funciona em todas as versões do Profit.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    Meus dados ficam salvos?
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    O histórico de cores fica salvo apenas no seu navegador (LocalStorage). Nenhum dado é enviado para servidores externos.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Developer Section -->
     <section id="about" class="developer-section">
         <div class="dev-container">
             <div class="dev-avatar">RK</div>
@@ -400,9 +149,14 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 ProfitColors v0.1.1. Desenvolvido com 💙 por <a href="https://kvasne.com" target="_blank" rel="noopener noreferrer">Raphael Kvasne</a>.</p>
+        <p>&copy; <span id="currentYear"></span> ProfitColors v0.1.1. Desenvolvido com 💙 por <a href="https://kvasne.com" target="_blank" rel="noopener noreferrer">Raphael Kvasne</a>.</p>
         <p style="font-size: 0.8rem; margin-top: 1rem; opacity: 0.5;">Este projeto não possui afiliação oficial com a Nelogica.</p>
     </footer>
+
+    <!-- Scripts -->
+    <script src="js/chart-bg.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
