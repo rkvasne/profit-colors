@@ -80,11 +80,16 @@ Contribuições são muito bem-vindas!
 
 ## 👤 Autor
 
-Desenvolvido com 💙 por **Raphael Kvasne**
+**Raphael Kvasne**
+*Full Stack Developer & Trader*
 
-- 📧 Email: rkvasne@gmail.com
-- 📸 Instagram: [@rkvasne](https://www.instagram.com/rkvasne/)
+Especialista em criar ferramentas que unem produtividade e design. Criador do **ProfitColors**, **Dahora App** e **Taskvasne**.
+
+- 🌐 Website: [kvasne.com](https://kvasne.com)
 - 💼 LinkedIn: [Raphael Kvasne](https://www.linkedin.com/in/raphael-kvasne/)
+- 📸 Instagram: [@rkvasne](https://www.instagram.com/rkvasne/)
+- � GitHub: [@rkvasne](https://github.com/rkvasne)
+- 📧 Email: rkvasne@gmail.com
 
 ## 📝 Changelog
 
