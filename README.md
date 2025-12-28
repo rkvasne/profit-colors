@@ -8,7 +8,7 @@ Uma ferramenta web profissional, open-source e gratuita para converter cores (RG
 
 🔗 **[Acesse a versão online](https://rkvasne.github.io/profit-colors/app.html)**
 
-Versão atual: **v0.1.2**
+Versão atual: **v0.1.3**
 
 ---
 
@@ -87,6 +87,18 @@ Desenvolvido com 💙 por **Raphael Kvasne**
 - 💼 LinkedIn: [Raphael Kvasne](https://www.linkedin.com/in/raphael-kvasne/)
 
 ## 📝 Changelog
+
+### v0.1.3 (2025-12-28)
+- **UI/UX:**
+  - Adicionado efeito de animação de "candle" e borda dinâmica nos cards da landing page.
+  - Melhorada a visibilidade dos títulos com gradientes animados.
+  - Otimizado layout dos inputs numéricos (remoção de setas padrão).
+- **Segurança:**
+  - Adicionado `rel="noopener noreferrer"` em todos os links externos.
+  - Implementado SRI (Subresource Integrity) para recursos de CDN.
+  - Removido uso de `innerHTML` em favor de métodos seguros de manipulação do DOM.
+- **Documentação:**
+  - Unificação e padronização dos arquivos de documentação.
 
 ### v0.1.2 (2025-12-26)
 - Padroniza os blocos de cores (Profit e Hue) em 12 colunas e múltiplos de 12.

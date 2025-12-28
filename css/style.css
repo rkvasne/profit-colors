@@ -25,6 +25,31 @@
     --shadow-glow: 0 0 20px rgba(46, 147, 250, 0.2);
 }
 
+.gradient-text {
+    display: inline-block;
+    background: linear-gradient(90deg, var(--bullish), var(--primary), var(--bearish));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.gradient-text-animated {
+    background-size: 200% 200%;
+    animation: gradientShift 6s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .gradient-text-animated {
+        animation: none;
+    }
+}
+
 * {
     margin: 0;
     padding: 0;

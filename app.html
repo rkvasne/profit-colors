@@ -8,7 +8,7 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎨</text></svg>">
     
     <!-- Fonts & Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -30,7 +30,7 @@
             <div class="nav-links">
                 <a href="index.html#features">Recursos</a>
                 <a href="index.html#about">Desenvolvedor</a>
-                <a href="https://github.com/rkvasne/profit-colors" target="_blank">GitHub</a>
+                <a href="https://github.com/rkvasne/profit-colors" target="_blank" rel="noopener noreferrer">GitHub</a>
             </div>
         </div>
     </nav>
@@ -66,15 +66,15 @@
             </div>
 
             <div class="input-group">
-                <div>
+                <div class="input-wrapper-num">
                     <label for="red">R</label>
                     <input type="number" id="red" class="app-input w-num" min="0" max="255" value="0">
                 </div>
-                <div>
+                <div class="input-wrapper-num">
                     <label for="green">G</label>
                     <input type="number" id="green" class="app-input w-num" min="0" max="255" value="0">
                 </div>
-                <div>
+                <div class="input-wrapper-num">
                     <label for="blue">B</label>
                     <input type="number" id="blue" class="app-input w-num" min="0" max="255" value="0">
                 </div>
@@ -150,7 +150,7 @@
     <div id="copyMessage" class="copy-message">Copiado!</div>
 
     <footer>
-        <p>&copy; <span id="currentYear"></span> ProfitColors v0.1.2</p>
+        <p>&copy; <span id="currentYear"></span> ProfitColors v0.1.3</p>
     </footer>
 
     <!-- Scripts -->

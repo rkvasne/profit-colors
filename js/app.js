@@ -21,6 +21,10 @@ const ctxHue = huePickerCanvas?.getContext('2d');
 let currentColor = { r: 0, g: 0, b: 0 };
 const HISTORY_KEY = 'colorHistory';
 
+function clearElement(element) {
+    while (element.firstChild) element.removeChild(element.firstChild);
+}
+
 // Conversão RGB para ProfitCode (Lógica Core)
 function rgbToProfitCode(r, g, b) {
     return r + (g * 256) + (b * 256 * 256);
@@ -58,13 +62,11 @@ function updateUI() {
     
     // Resultado Profit
     const profitCode = rgbToProfitCode(r, g, b);
-    resultDiv.innerHTML = `RGB(${r}, ${g}, ${b})`; // Mostrando RGB padrão como principal
-    // Adicionar código do Profit visualmente se necessário, ou manter apenas RGB
-    // Para ProfitChart, o input aceita RGB(r,g,b) direto em versões novas, 
-    // ou o código inteiro. Vamos mostrar o formato RGB(r,g,b) que é mais legível,
-    // mas copiar o código numérico se o usuário preferir.
-    
-    resultDiv.innerHTML = `Profit: <strong>${profitCode}</strong>`;
+    clearElement(resultDiv);
+    resultDiv.append('Profit: ');
+    const strong = document.createElement('strong');
+    strong.textContent = String(profitCode);
+    resultDiv.appendChild(strong);
     
     // Atualizar tabela (se existir linha selecionada)
     // updateTable(); // Simplificado para este exemplo
@@ -87,13 +89,23 @@ function addToHistory(r, g, b, code) {
         updateUI();
     };
 
-    item.innerHTML = `
-        <div class="history-swatch" style="background: rgb(${r},${g},${b})"></div>
-        <div class="history-info">
-            <strong>${code}</strong>
-            <span>${rgbToHex(r,g,b)}</span>
-        </div>
-    `;
+    const swatch = document.createElement('div');
+    swatch.className = 'history-swatch';
+    swatch.style.backgroundColor = `rgb(${r},${g},${b})`;
+
+    const info = document.createElement('div');
+    info.className = 'history-info';
+
+    const strong = document.createElement('strong');
+    strong.textContent = String(code);
+
+    const hex = document.createElement('span');
+    hex.textContent = rgbToHex(r, g, b);
+
+    info.appendChild(strong);
+    info.appendChild(hex);
+    item.appendChild(swatch);
+    item.appendChild(info);
 
     historyContainer.insertBefore(item, historyContainer.firstChild);
     if (historyContainer.children.length > 12) {
@@ -112,6 +124,9 @@ function getStoredHistory() {
             .filter((x) => Number.isFinite(x.r) && Number.isFinite(x.g) && Number.isFinite(x.b) && Number.isFinite(x.code))
             .slice(0, 12);
     } catch {
+        try {
+            localStorage.removeItem(HISTORY_KEY);
+        } catch {}
         return [];
     }
 }
@@ -119,7 +134,11 @@ function getStoredHistory() {
 function setStoredHistory(items) {
     try {
         localStorage.setItem(HISTORY_KEY, JSON.stringify(items.slice(0, 12)));
-    } catch {}
+    } catch {
+        if (typeof showCopyMessage === 'function') {
+            showCopyMessage('Não foi possível salvar o histórico');
+        }
+    }
 }
 
 function addToHistoryAndPersist(r, g, b, code) {
@@ -132,7 +151,7 @@ function addToHistoryAndPersist(r, g, b, code) {
 function renderStoredHistory() {
     const historyContainer = document.getElementById('colorHistory');
     if (!historyContainer) return;
-    historyContainer.innerHTML = '';
+    clearElement(historyContainer);
     const items = getStoredHistory();
     items.forEach((x) => addToHistory(x.r, x.g, x.b, x.code));
 }
@@ -163,16 +182,21 @@ function initProfitDefaults() {
     const graysGrid = document.getElementById('profitGrayGrid');
     if (!colorsGrid || !graysGrid) return;
 
-    colorsGrid.innerHTML = '';
-    graysGrid.innerHTML = '';
+    clearElement(colorsGrid);
+    clearElement(graysGrid);
 
     function createProfitTile({ r, g, b, label }) {
         const item = document.createElement('div');
         item.className = 'color-item-std';
-        item.innerHTML = `
-            <div class="std-swatch" style="background: rgb(${r}, ${g}, ${b});"></div>
-            <span>${label}</span>
-        `;
+        const swatch = document.createElement('div');
+        swatch.className = 'std-swatch';
+        swatch.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+
+        const text = document.createElement('span');
+        text.textContent = label;
+
+        item.appendChild(swatch);
+        item.appendChild(text);
 
         item.addEventListener('click', () => {
             window.loadColor(r, g, b);
@@ -227,16 +251,21 @@ function initColorTable() {
     const grayGrid = document.getElementById('grayColorGrid');
     if (!hueGrid || !grayGrid) return;
 
-    hueGrid.innerHTML = '';
-    grayGrid.innerHTML = '';
+    clearElement(hueGrid);
+    clearElement(grayGrid);
 
     function createColorTile({ r, g, b, label }) {
         const item = document.createElement('div');
         item.className = 'color-item-std';
-        item.innerHTML = `
-            <div class="std-swatch" style="background: rgb(${r}, ${g}, ${b});"></div>
-            <span>${label}</span>
-        `;
+        const swatch = document.createElement('div');
+        swatch.className = 'std-swatch';
+        swatch.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+
+        const text = document.createElement('span');
+        text.textContent = label;
+
+        item.appendChild(swatch);
+        item.appendChild(text);
 
         item.addEventListener('click', () => {
             window.loadColor(r, g, b);

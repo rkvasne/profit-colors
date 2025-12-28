@@ -2,9 +2,13 @@
 
 // Copiar para clipboard com feedback
 function copyToClipboard(text, message = 'Copiado!') {
-    navigator.clipboard.writeText(text).then(() => {
-        showCopyMessage(message);
-    });
+    navigator.clipboard.writeText(text)
+        .then(() => {
+            showCopyMessage(message);
+        })
+        .catch(() => {
+            showCopyMessage('Não foi possível copiar');
+        });
 }
 
 // Mostrar mensagem toast
@@ -27,6 +31,8 @@ function shareUrl() {
             title: 'ProfitColors',
             text: 'Converta cores RGB para o ProfitChart',
             url: window.location.href
+        }).catch(() => {
+            copyToClipboard(window.location.href, 'Link copiado!');
         });
     } else {
         copyToClipboard(window.location.href, 'Link copiado!');

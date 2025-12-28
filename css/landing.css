@@ -135,21 +135,87 @@
     gap: 2rem;
 }
 
+/* Animação de Candle (Efeito Pulse/Subida) */
+@keyframes candlePulse {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+}
+
+/* Animação de Borda Rotativa */
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes rotateBorder {
+    to {
+        --angle: 360deg;
+    }
+}
+
 .feature-card {
-    background: var(--bg-card);
+    background-color: var(--bg-card);
     border: 1px solid var(--border);
     padding: 2.5rem;
     border-radius: 16px;
-    transition: all 0.3s;
+    transition: border-color 0.3s, box-shadow 0.3s;
     position: relative;
     overflow: hidden;
     height: 100%;
 }
 
+/* Pseudo-elemento para o candle */
+.feature-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: linear-gradient(
+        to top, 
+        transparent, 
+        rgba(0, 227, 150, 0.05), 
+        rgba(0, 227, 150, 0.4), 
+        rgba(0, 227, 150, 0.05), 
+        transparent
+    );
+    background-size: 100% 100%;
+    transform: translateY(100%); /* Começa escondido embaixo */
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.feature-card > * {
+    position: relative;
+    z-index: 1;
+}
+
 .feature-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--primary);
-    box-shadow: var(--shadow-card);
+    border-color: transparent; /* Borda transparente para mostrar o gradiente atrás */
+    box-shadow: 0 0 20px rgba(0, 227, 150, 0.15);
+    
+    /* Borda animada usando background layers */
+    background: 
+        linear-gradient(var(--bg-card), var(--bg-card)) padding-box,
+        conic-gradient(from var(--angle), transparent 0%, var(--bullish) 20%, transparent 40%) border-box;
+    
+    animation: rotateBorder 2s linear infinite;
+}
+
+.feature-card:hover::before {
+    animation: candlePulse 1.5s ease-in-out infinite;
 }
 
 .feature-icon {
