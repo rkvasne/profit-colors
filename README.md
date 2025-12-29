@@ -80,18 +80,21 @@ Contribuições são muito bem-vindas!
 
 ## 👤 Autor
 
-**Raphael Kvasne**
-*Full Stack Developer & Trader*
+Desenvolvido com 💙 por **Raphael Kvasne**
 
-Especialista em criar ferramentas que unem produtividade e design. Criador do **ProfitColors**, **Dahora App** e **Taskvasne**.
-
-- 🌐 Website: [kvasne.com](https://kvasne.com)
-- 💼 LinkedIn: [Raphael Kvasne](https://www.linkedin.com/in/raphael-kvasne/)
-- 📸 Instagram: [@rkvasne](https://www.instagram.com/rkvasne/)
-- � GitHub: [@rkvasne](https://github.com/rkvasne)
 - 📧 Email: rkvasne@gmail.com
+- 📸 Instagram: [@rkvasne](https://www.instagram.com/rkvasne/)
+- 💼 LinkedIn: [Raphael Kvasne](https://www.linkedin.com/in/raphael-kvasne/)
 
 ## 📝 Changelog
+
+### v0.1.4 (2025-12-28)
+- **Documentação:**
+  - Padronização completa da documentação do projeto.
+  - Atualização dos títulos das páginas para padrão `[App] v[Versão] - Kvasne.com`.
+- **UI/UX:**
+  - Correção dos botões de ação (ícones isolados, texto em tooltip).
+  - Novo design para os atalhos de teclado (estilo keycap moderno com indicador de combinação `+`).
 
 ### v0.1.3 (2025-12-28)
 - **UI/UX:**

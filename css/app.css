@@ -434,42 +434,67 @@ canvas {
     padding: 20px;
     border: 1px solid var(--border);
     border-radius: 12px;
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(11, 15, 25, 0.4); /* Darker bg */
     font-size: 0.9rem;
     color: var(--text-primary);
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
-    line-height: 1.8;
+    gap: 20px;
 }
 
 .shortcuts-title {
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     font-weight: 600;
     color: var(--text-secondary);
     text-transform: uppercase;
     font-size: 0.8rem;
     text-align: center;
-}
-
-.shortcuts-hint b {
-    color: var(--text-primary);
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid var(--border);
-    padding: 2px 8px;
-    border-radius: 4px;
-    margin-right: 5px;
-    font-weight: 700;
-    box-shadow: none;
+    letter-spacing: 0.05em;
 }
 
 .shortcut-item {
     display: inline-flex;
     align-items: center;
+    gap: 12px;
     white-space: nowrap;
+}
+
+.keys-wrapper {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.key-plus {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin: 0 2px;
+}
+
+.shortcuts-hint kbd {
+    background: linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 100%);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 2px solid rgba(0,0,0,0.4);
+    border-radius: 6px;
+    padding: 4px 10px;
+    min-width: 28px;
+    text-align: center;
+    font-family: var(--font-main);
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--text-primary);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    transition: transform 0.1s, border-bottom 0.1s;
+}
+
+.shortcuts-hint kbd:active {
+    transform: translateY(2px);
+    border-bottom-width: 0;
 }
 
 .history-section {

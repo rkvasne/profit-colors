@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>App - ProfitColors</title>
+    <title>ProfitColors v0.1.4 - Kvasne.com</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎨</text></svg>">
     
     <!-- Fonts & Icons -->
@@ -28,40 +28,53 @@
                 <span>ProfitColors</span>
             </a>
             <div class="nav-links">
-                <a href="index.html#features">Recursos</a>
-                <a href="index.html#about">Desenvolvedor</a>
-                <a href="https://github.com/rkvasne/profit-colors" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="index.html#features" data-i18n="nav.features">Recursos</a>
+                <a href="index.html#about" data-i18n="nav.developer">Desenvolvedor</a>
+                <a href="https://github.com/rkvasne/profit-colors" target="_blank" rel="noopener noreferrer" data-i18n="nav.github">GitHub</a>
+                <button id="lang-toggle" class="lang-btn">EN</button>
             </div>
         </div>
     </nav>
 
     <div class="app-container">
         <div class="app-header">
-            <h1 class="app-title">Conversor RGB</h1>
-            <button class="share-button" onclick="shareUrl()" title="Compartilhar">
+            <h1 class="app-title" data-i18n="app.title">Conversor RGB</h1>
+            <button class="share-button" onclick="shareUrl()" title="Compartilhar" data-i18n-title="app.share">
                 <i class="fas fa-share-alt"></i>
             </button>
         </div>
 
         <div class="shortcuts-hint">
             <div class="shortcuts-title">
-                <i class="fas fa-keyboard"></i> Atalhos de Teclado
+                <i class="fas fa-keyboard"></i> <span data-i18n="shortcuts.title">Atalhos de Teclado</span>
             </div>
-            <span class="shortcut-item" title="Copiar"><b>ALT</b> + <b>C</b> Copiar Código</span>
-            <span class="shortcut-item" title="Hex"><b>ALT</b> + <b>H</b> Ir para Hex</span>
-            <span class="shortcut-item" title="RGB"><b>ALT</b> + <b>R</b> Ir para RGB</span>
-            <span class="shortcut-item" title="Reset"><b>ESC</b> Resetar</span>
+            <div class="shortcut-item" title="Copiar">
+                <div class="keys-wrapper"><kbd>Alt</kbd> <span class="key-plus">+</span> <kbd>C</kbd></div>
+                <span data-i18n="shortcuts.copy">Copiar Código</span>
+            </div>
+            <div class="shortcut-item" title="Hex">
+                <div class="keys-wrapper"><kbd>Alt</kbd> <span class="key-plus">+</span> <kbd>H</kbd></div>
+                <span data-i18n="shortcuts.hex">Ir para Hex</span>
+            </div>
+            <div class="shortcut-item" title="RGB">
+                <div class="keys-wrapper"><kbd>Alt</kbd> <span class="key-plus">+</span> <kbd>R</kbd></div>
+                <span data-i18n="shortcuts.rgb">Ir para RGB</span>
+            </div>
+            <div class="shortcut-item" title="Reset">
+                <div class="keys-wrapper"><kbd>Esc</kbd></div>
+                <span data-i18n="shortcuts.reset">Resetar</span>
+            </div>
         </div>
 
         <!-- Inputs Section -->
         <div class="input-section">
             <div>
-                <label for="hexInput">Hex Code</label>
+                <label for="hexInput" data-i18n="input.hex">Hex Code</label>
                 <input type="text" id="hexInput" class="app-input w-hex" value="#000000" maxlength="7" placeholder="#000000">
             </div>
             
             <div>
-                <label for="rgbSingle">RGB String</label>
+                <label for="rgbSingle" data-i18n="input.rgb_string">RGB String</label>
                 <input type="text" id="rgbSingle" class="app-input w-rgb" value="0, 0, 0">
             </div>
 
@@ -89,18 +102,18 @@
 
         <!-- Preview & Result -->
         <div class="preview-actions">
-            <div id="colorPreview" title="Cor Atual"></div>
-            <button class="btn-icon" onclick="copyColorFromPreview()" title="Copiar Código Profit">
+            <div id="colorPreview" title="Cor Atual" data-i18n-title="preview.title"></div>
+            <button class="btn-icon" onclick="copyColorFromPreview()" title="Copiar Código Profit" data-i18n-title="preview.copy">
                 <i class="far fa-copy"></i>
             </button>
         </div>
 
-        <div id="result">Profit: <strong>0</strong></div>
+        <div id="result"><span data-i18n="result.profit">Profit:</span> <strong>0</strong></div>
 
         <!-- Cores Padrão (Accordion) -->
         <details class="accordion-section" id="defaultColors">
             <summary class="accordion-header">
-                <span>Cores Padrão ProfitChart</span>
+                <span data-i18n="accordion.default">Cores Padrão ProfitChart</span>
                 <i class="fas fa-chevron-down" id="accordionIcon"></i>
             </summary>
             <div class="accordion-content">
@@ -112,7 +125,7 @@
 
         <details class="accordion-section" id="colorTable">
             <summary class="accordion-header">
-                <span>Tabela de Cores (Hue)</span>
+                <span data-i18n="accordion.table">Tabela de Cores (Hue)</span>
                 <i class="fas fa-chevron-down"></i>
             </summary>
             <div class="accordion-content">
@@ -124,7 +137,7 @@
 
         <!-- History -->
         <div class="history-section">
-            <h2>Histórico Recente</h2>
+            <h2 data-i18n="history.title">Histórico Recente</h2>
             <div id="colorHistory" class="history-grid">
                 <!-- Preenchido via JS -->
             </div>
@@ -133,24 +146,24 @@
 
     <!-- Shortcuts Tooltip (Mantido para mobile/detalhes) -->
     <div class="tooltip-container">
-        <button class="help-button" id="helpButton" title="Atalhos de Teclado">
+        <button class="help-button" id="helpButton" title="Atalhos de Teclado" data-i18n-title="tooltip.title">
             <i class="fas fa-keyboard"></i>
         </button>
         <div class="help-content" id="helpContent">
-            <h3>Atalhos de Teclado</h3>
+            <h3 data-i18n="tooltip.title">Atalhos de Teclado</h3>
             <ul>
-                <li><span>Copiar Código</span> <kbd>Alt</kbd> <kbd>C</kbd></li>
-                <li><span>Focar Hex</span> <kbd>Alt</kbd> <kbd>H</kbd></li>
-                <li><span>Focar R/G/B</span> <kbd>Alt</kbd> <kbd>R</kbd> <kbd>G</kbd> <kbd>B</kbd></li>
-                <li><span>Limpar/Resetar</span> <kbd>Esc</kbd></li>
+                <li><span data-i18n="tooltip.copy">Copiar Código</span> <kbd>Alt</kbd> <kbd>C</kbd></li>
+                <li><span data-i18n="tooltip.hex">Focar Hex</span> <kbd>Alt</kbd> <kbd>H</kbd></li>
+                <li><span data-i18n="tooltip.rgb">Focar R/G/B</span> <kbd>Alt</kbd> <kbd>R</kbd> <kbd>G</kbd> <kbd>B</kbd></li>
+                <li><span data-i18n="tooltip.reset">Limpar/Resetar</span> <kbd>Esc</kbd></li>
             </ul>
         </div>
     </div>
 
-    <div id="copyMessage" class="copy-message">Copiado!</div>
+    <div id="copyMessage" class="copy-message" data-i18n="copy.success">Copiado!</div>
 
     <footer>
-        <p>&copy; <span id="currentYear"></span> ProfitColors v0.1.3</p>
+        <p>&copy; <span id="currentYear"></span> ProfitColors v0.1.4</p>
     </footer>
 
     <!-- Scripts -->

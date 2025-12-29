@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProfitColors - Conversor de Cores Profissional para Traders</title>
+    <title>ProfitColors v0.1.3 - Kvasne.com</title>
     <meta name="description" content="Ferramenta profissional para traders personalizarem o ProfitChart. Converta RGB e Hex para o código nativo da Nelogica com precisão e rapidez.">
     <meta name="keywords" content="ProfitChart, Nelogica, Trading, Cores, Setup, Layout, Day Trade, RGB, Hex">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎨</text></svg>">
@@ -30,10 +30,11 @@
                 <span>ProfitColors</span>
             </a>
             <div class="nav-links">
-                <a href="#features">Recursos</a>
-                <a href="#about">Desenvolvedor</a>
-                <a href="https://github.com/rkvasne/profit-colors" target="_blank" rel="noopener noreferrer">GitHub</a>
-                <a href="app.html" class="nav-btn">Abrir App</a>
+                <a href="#features" data-i18n="nav.features">Recursos</a>
+                <a href="#about" data-i18n="nav.developer">Desenvolvedor</a>
+                <a href="https://github.com/rkvasne/profit-colors" target="_blank" rel="noopener noreferrer" data-i18n="nav.github">GitHub</a>
+                <a href="app.html" class="nav-btn" data-i18n="nav.open_app">Abrir App</a>
+                <button id="lang-toggle" class="lang-btn">EN</button>
             </div>
         </div>
     </nav>
@@ -44,16 +45,16 @@
         <canvas id="chart-bg"></canvas>
 
         <div class="hero-content">
-            <div class="version-badge">Atualização v0.1.3</div>
-            <h1>Customize seu <span class="gradient-text">ProfitChart</span><br>como um Profissional</h1>
-            <p>Evite tentativa e erro: selecione a cor e gere o código inteiro do Profit rapidamente (RGB, Hex e seletor visual).</p>
+            <div class="version-badge" data-i18n="hero.badge">Atualização v0.1.3</div>
+            <h1 data-i18n="hero.title">Customize seu <span class="gradient-text">ProfitChart</span><br>como um Profissional</h1>
+            <p data-i18n="hero.subtitle">Evite tentativa e erro: selecione a cor e gere o código inteiro do Profit rapidamente (RGB, Hex e seletor visual).</p>
             
             <div class="cta-group">
                 <a href="app.html" class="btn btn-primary">
-                    <i class="fas fa-rocket"></i> Abrir Conversor
+                    <i class="fas fa-rocket"></i> <span data-i18n="hero.cta_primary">Abrir Conversor</span>
                 </a>
                 <a href="https://github.com/rkvasne/profit-colors" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                    <i class="fab fa-github"></i> Ver Código Fonte
+                    <i class="fab fa-github"></i> <span data-i18n="hero.cta_secondary">Ver Código Fonte</span>
                 </a>
             </div>
         </div>
@@ -62,29 +63,29 @@
     <!-- Features Section -->
     <section id="features" class="features">
         <div class="section-header">
-            <h2 class="section-title">Feito para usar no dia a dia</h2>
-            <p class="section-subtitle">Tudo o que você precisa para padronizar as cores do seu setup</p>
+            <h2 class="section-title" data-i18n="features.title">Feito para usar no dia a dia</h2>
+            <p class="section-subtitle" data-i18n="features.subtitle">Tudo o que você precisa para padronizar as cores do seu setup</p>
         </div>
         <div class="features-grid">
             <div class="feature-card">
                 <div class="feature-icon"><i class="fas fa-sync-alt"></i></div>
-                <h3>Conversão Bidirecional</h3>
-                <p>Digite RGB/Hex ou use o seletor. Copie o código inteiro pronto para colar no Profit.</p>
+                <h3 data-i18n="features.card1.title">Conversão Bidirecional</h3>
+                <p data-i18n="features.card1.desc">Digite RGB/Hex ou use o seletor. Copie o código inteiro pronto para colar no Profit.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon"><i class="fas fa-history"></i></div>
-                <h3>Histórico Inteligente</h3>
-                <p>Suas últimas cores ficam salvas no navegador para reaproveitar no setup.</p>
+                <h3 data-i18n="features.card2.title">Histórico Inteligente</h3>
+                <p data-i18n="features.card2.desc">Suas últimas cores ficam salvas no navegador para reaproveitar no setup.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
-                <h3>100% Responsivo</h3>
-                <p>Use no PC do trading ou no celular: funciona igual em qualquer tela.</p>
+                <h3 data-i18n="features.card3.title">100% Responsivo</h3>
+                <p data-i18n="features.card3.desc">Use no PC do trading ou no celular: funciona igual em qualquer tela.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon"><i class="fas fa-code"></i></div>
-                <h3>Open Source</h3>
-                <p>Código aberto, simples e auditável. Sem trackers e sem coleta de dados.</p>
+                <h3 data-i18n="features.card4.title">Open Source</h3>
+                <p data-i18n="features.card4.desc">Código aberto, simples e auditável. Sem trackers e sem coleta de dados.</p>
             </div>
         </div>
     </section>
@@ -92,52 +93,52 @@
     <!-- FAQ Section -->
     <section class="faq-section">
         <div class="section-header">
-            <h2 class="section-title">Perguntas Frequentes</h2>
-            <p class="section-subtitle">Dúvidas comuns sobre o uso da ferramenta</p>
+            <h2 class="section-title" data-i18n="faq.title">Perguntas Frequentes</h2>
+            <p class="section-subtitle" data-i18n="faq.subtitle">Dúvidas comuns sobre o uso da ferramenta</p>
         </div>
         <div class="faq-container">
             <div class="faq-item">
                 <div class="faq-question">
-                    Preciso instalar algo?
+                    <span data-i18n="faq.q1">Preciso instalar algo?</span>
                     <i class="fas fa-chevron-down faq-icon"></i>
                 </div>
-                <div class="faq-answer">
+                <div class="faq-answer" data-i18n="faq.a1">
                     Não. É só abrir e usar no navegador.
                 </div>
             </div>
             <div class="faq-item">
                 <div class="faq-question">
-                    Funciona offline?
+                    <span data-i18n="faq.q2">Funciona offline?</span>
                     <i class="fas fa-chevron-down faq-icon"></i>
                 </div>
-                <div class="faq-answer">
+                <div class="faq-answer" data-i18n="faq.a2">
                     Sim, depois de carregar uma vez, tende a funcionar sem internet (depende do cache do navegador).
                 </div>
             </div>
             <div class="faq-item">
                 <div class="faq-question">
-                    Funciona em qualquer versão do ProfitChart?
+                    <span data-i18n="faq.q3">Funciona em qualquer versão do ProfitChart?</span>
                     <i class="fas fa-chevron-down faq-icon"></i>
                 </div>
-                <div class="faq-answer">
+                <div class="faq-answer" data-i18n="faq.a3">
                     Sim. O código gerado é o valor inteiro usado pelo ProfitChart para cores.
                 </div>
             </div>
             <div class="faq-item">
                 <div class="faq-question">
-                    O que fica salvo?
+                    <span data-i18n="faq.q4">O que fica salvo?</span>
                     <i class="fas fa-chevron-down faq-icon"></i>
                 </div>
-                <div class="faq-answer">
+                <div class="faq-answer" data-i18n="faq.a4">
                     Apenas o histórico de cores no seu navegador. Nada é enviado para servidores.
                 </div>
             </div>
             <div class="faq-item">
                 <div class="faq-question">
-                    O ProfitColors é gratuito?
+                    <span data-i18n="faq.q5">O ProfitColors é gratuito?</span>
                     <i class="fas fa-chevron-down faq-icon"></i>
                 </div>
-                <div class="faq-answer">
+                <div class="faq-answer" data-i18n="faq.a5">
                     Sim. O projeto é gratuito e de código aberto. Você pode usar à vontade e contribuir no GitHub.
                 </div>
             </div>
@@ -147,37 +148,36 @@
     <!-- Developer Section -->
     <section id="about" class="developer-section">
         <div class="dev-container">
-            <div class="dev-avatar">RK</div>
-            <h2>Raphael Kvasne</h2>
-            <h3>Full Stack Developer & Trader</h3>
-            <p class="dev-bio">
-                Especialista em criar ferramentas que unem produtividade e design. Criador do <strong>ProfitColors</strong>, <strong>Dahora App</strong> e <strong>Taskvasne</strong>. Minha missão é simplificar fluxos de trabalho complexos com software elegante e eficiente.
-            </p>
-            <div class="dev-links">
-                <a href="https://kvasne.com" target="_blank" rel="noopener noreferrer" class="dev-link">
-                    <i class="fas fa-globe"></i> kvasne.com
-                </a>
-                <a href="https://github.com/rkvasne" target="_blank" rel="noopener noreferrer" class="dev-link">
-                    <i class="fab fa-github"></i> GitHub
-                </a>
-                <a href="https://www.linkedin.com/in/raphael-kvasne/" target="_blank" rel="noopener noreferrer" class="dev-link">
-                    <i class="fab fa-linkedin"></i> LinkedIn
-                </a>
-                <a href="https://www.instagram.com/rkvasne/" target="_blank" rel="noopener noreferrer" class="dev-link">
-                    <i class="fab fa-instagram"></i> Instagram
-                </a>
-                <a href="mailto:rkvasne@gmail.com" class="dev-link">
-                    <i class="fas fa-envelope"></i> Contato
-                </a>
+            <div class="dev-image-wrapper">
+                <div class="dev-avatar">RK</div>
+            </div>
+            <div class="dev-content">
+                <span class="dev-label">Developer</span>
+                <h2 class="dev-name">Raphael Kvasne</h2>
+                <h3 class="dev-role" data-i18n="dev.role">Full Stack Developer & Trader</h3>
+                <p class="dev-bio" data-i18n="dev.bio">
+                    Especialista em criar ferramentas que unem produtividade e design. Criador do <strong>ProfitColors</strong>, <strong>Dahora App</strong> e <strong>Taskvasne</strong>. Focado em simplicidade e usabilidade.
+                </p>
+                <div class="dev-socials">
+                    <a href="https://kvasne.com" target="_blank" rel="noopener noreferrer" class="social-btn" title="Website">
+                        <i class="fas fa-globe"></i>
+                    </a>
+                    <a href="https://github.com/rkvasne" target="_blank" rel="noopener noreferrer" class="social-btn" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="mailto:rkvasne@gmail.com" class="social-btn" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; <span id="currentYear"></span> ProfitColors v0.1.3. Desenvolvido com 💙 por <a href="https://kvasne.com" target="_blank" rel="noopener noreferrer">Raphael Kvasne</a>.</p>
-        <p style="font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.7;">Sem login. Sem telemetria. Seus dados ficam no seu navegador.</p>
-        <p style="font-size: 0.8rem; margin-top: 1rem; opacity: 0.5;">Este projeto não possui afiliação oficial com a Nelogica.</p>
+        <p>&copy; <span id="currentYear"></span> ProfitColors v0.1.4. <span data-i18n="footer.developed_by">Desenvolvido com 💙 por</span> <a href="https://kvasne.com" target="_blank" rel="noopener noreferrer">Raphael Kvasne</a>.</p>
+        <p style="font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.7;" data-i18n="footer.privacy">Sem login. Sem telemetria. Seus dados ficam no seu navegador.</p>
+        <p style="font-size: 0.8rem; margin-top: 1rem; opacity: 0.5;" data-i18n="footer.disclaimer">Este projeto não possui afiliação oficial com a Nelogica.</p>
     </footer>
 
     <!-- Scripts -->

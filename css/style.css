@@ -171,6 +171,27 @@ footer a:hover {
     background: #3e4a5e;
 }
 
+/* Language Button */
+.lang-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.7);
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-left: 24px;
+    transition: all 0.3s;
+}
+
+.lang-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: rgba(255, 255, 255, 0.1);
+}
+
 /* Mobile */
 @media (max-width: 768px) {
     .nav-links { display: none; }

@@ -412,9 +412,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Copy result
     resultDiv.addEventListener('click', () => {
-        const text = resultDiv.innerText.replace('Profit: ', '');
-        addToHistoryAndPersist(currentColor.r, currentColor.g, currentColor.b, rgbToProfitCode(currentColor.r, currentColor.g, currentColor.b));
-        copyToClipboard(text, 'Código Profit Copiado!');
+        const code = rgbToProfitCode(currentColor.r, currentColor.g, currentColor.b);
+        addToHistoryAndPersist(currentColor.r, currentColor.g, currentColor.b, code);
+        copyToClipboard(String(code), 'copy.success');
     });
 
     // Shortcuts Logic
